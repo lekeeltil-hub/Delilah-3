@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Para ti</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            padding: 1.5rem;
+        }
+
+        .card {
+            max-width: 650px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(2px);
+            border-radius: 2rem;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.6);
+            padding: 2.2rem 2rem;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .message {
+            font-size: 1.5rem;
+            line-height: 1.4;
+            font-weight: 400;
+            color: #1e2a3e;
+            margin-bottom: 2rem;
+            font-style: normal;
+            letter-spacing: -0.2px;
+        }
+
+        .signature {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #a67c6e;
+            border-top: 1px solid #f0e2df;
+            display: inline-block;
+            padding-top: 1rem;
+            margin-top: 0.5rem;
+            font-weight: 300;
+        }
+
+        .heart {
+            color: #d95b5b;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            display: inline-block;
+            animation: pulse 1.6s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.7; }
+        }
+
+        @media (max-width: 500px) {
+            .card { padding: 1.8rem 1.2rem; }
+            .message { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="icon">✨</div>
+        <div class="message">
+            “No necesito que sepas quién soy. <br>
+            Solo quería decirte que, en algún lugar, alguien piensa <br>
+            que eres de las personas más bonitas de este mundo. <br>
+            Y no hablo de tu cara.”
+        </div>
+        <div class="signature">para vos · anónimo</div>
+        <div class="heart">❤️</div>
+    </div>
+</body>
+</html>
