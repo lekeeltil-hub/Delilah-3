@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Para ti</title>
+    <title>✦ para ti ✦</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,85 +14,421 @@
 
         body {
             min-height: 100vh;
-            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            background: radial-gradient(circle at 30% 10%, #0f0c0e 0%, #1a1518 50%, #0a080a 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            font-family: 'Inter', sans-serif;
             padding: 1.5rem;
+            position: relative;
         }
 
-        .card {
-            max-width: 650px;
+        .star {
+            position: fixed;
+            color: rgba(255, 215, 180, 0.2);
+            font-size: 1.2rem;
+            user-select: none;
+            pointer-events: none;
+            z-index: 0;
+            animation: floatStar 8s infinite ease-in-out;
+        }
+
+        @keyframes floatStar {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.2; }
+            50% { transform: translateY(-20px) rotate(10deg); opacity: 0.5; }
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(2px);
-            border-radius: 2rem;
-            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.6);
-            padding: 2.2rem 2rem;
-            transition: all 0.3s ease;
-            text-align: center;
+            animation: fadeInUp 0.7s ease-out;
         }
 
-        .icon {
-            font-size: 3rem;
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .frame {
+            background: rgba(20, 18, 22, 0.75);
+            backdrop-filter: blur(16px);
+            border-radius: 48px;
+            box-shadow: 0 40px 60px -30px rgba(0, 0, 0, 0.6),
+                        0 0 0 1px rgba(230, 200, 170, 0.15) inset;
+            padding: 2.2rem 2rem;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(210, 160, 120, 0.2);
+        }
+
+        .frame:hover {
+            transform: scale(1.01);
+            border-color: rgba(210, 160, 120, 0.35);
+        }
+
+        .line {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d4a373, #b5835a, #d4a373, transparent);
+            margin: 0 auto 1.5rem auto;
+            border-radius: 2px;
+            opacity: 0.6;
+        }
+
+        .symbol-container {
+            text-align: center;
             margin-bottom: 1rem;
-            opacity: 0.8;
+        }
+
+        .curved-border {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            background: rgba(255, 59, 111, 0.08);
+            padding: 0.5rem 1.8rem;
+            border-radius: 80px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 59, 111, 0.3);
+            box-shadow: 0 0 12px rgba(255, 59, 111, 0.2);
+            animation: frameGlow 2.5s ease-in-out infinite;
+        }
+
+        @keyframes frameGlow {
+            0% { border-color: rgba(255, 59, 111, 0.2); box-shadow: 0 0 4px rgba(255, 59, 111, 0.1); }
+            50% { border-color: rgba(255, 59, 111, 0.7); box-shadow: 0 0 18px rgba(255, 59, 111, 0.5), 0 0 8px rgba(255, 255, 255, 0.3); }
+            100% { border-color: rgba(255, 59, 111, 0.2); box-shadow: 0 0 4px rgba(255, 59, 111, 0.1); }
+        }
+
+        .symbol-glow {
+            font-size: 2.2rem;
+            letter-spacing: 0.2rem;
+            display: inline-block;
+            animation: symbolPulse 2s ease-in-out infinite;
+        }
+
+        .heart-symbol {
+            color: #ff3b6f;
+            text-shadow: 0 0 4px #ff3b6f, 0 0 8px rgba(255, 59, 111, 0.5);
+            animation: neonPulse 2s ease-in-out infinite;
+        }
+
+        .star-symbol {
+            color: #ffb8d0;
+            text-shadow: 0 0 4px #ff9ebd, 0 0 8px rgba(255, 100, 130, 0.4);
+            animation: starTwinkle 1.8s ease-in-out infinite;
+        }
+
+        @keyframes symbolPulse {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.08); opacity: 1; }
+        }
+
+        @keyframes neonPulse {
+            0% { text-shadow: 0 0 2px #ff3b6f, 0 0 4px rgba(255, 59, 111, 0.4); }
+            50% { text-shadow: 0 0 8px #ff3b6f, 0 0 16px rgba(255, 59, 111, 0.7); }
+            100% { text-shadow: 0 0 2px #ff3b6f, 0 0 4px rgba(255, 59, 111, 0.4); }
+        }
+
+        @keyframes starTwinkle {
+            0%, 100% { text-shadow: 0 0 2px #ffb8d0; opacity: 0.7; }
+            50% { text-shadow: 0 0 10px #ffb8d0, 0 0 20px rgba(255, 184, 208, 0.6); opacity: 1; }
         }
 
         .message {
-            font-size: 1.5rem;
-            line-height: 1.4;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.45rem;
+            line-height: 1.5;
             font-weight: 400;
-            color: #1e2a3e;
-            margin-bottom: 2rem;
-            font-style: normal;
+            color: #f2e8df;
+            text-align: center;
+            margin: 1.2rem 0;
             letter-spacing: -0.2px;
         }
 
-        .signature {
-            font-size: 0.9rem;
-            text-transform: uppercase;
+        .highlight-red {
+            color: #ff3b6f;
+            font-weight: 500;
+            display: inline-block;
+            animation: neonPulse 2.5s ease-in-out infinite;
+        }
+
+        .pista {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            margin: 1.2rem 0 1rem 0;
+            font-size: 1rem;
+            color: #c9b69a;
+            text-align: center;
+            border-top: 1px dashed rgba(200, 160, 120, 0.25);
+            padding-top: 1.2rem;
+        }
+
+        /* ========== REPRODUCTOR ESTILO SPOTIFY ========== */
+        .modern-player {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 16px;
+            padding: 0.8rem;
+            margin: 1.2rem 0;
+            border: 1px solid rgba(210, 160, 120, 0.3);
+            backdrop-filter: blur(8px);
+        }
+
+        .player-image {
+            width: 64px;
+            height: 64px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 59, 111, 0.3);
+        }
+
+        .player-controls-container {
+            flex: 1;
+        }
+
+        .player-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .player-btn {
+            background: rgba(255, 59, 111, 0.15);
+            border: none;
+            color: #ff8aa8;
+            font-size: 1.3rem;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .player-btn:hover {
+            background: rgba(255, 59, 111, 0.3);
+            transform: scale(1.05);
+            color: #ffb8d0;
+            box-shadow: 0 0 8px rgba(255, 59, 111, 0.4);
+        }
+
+        .time-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            color: #b2906e;
+            margin-top: 0.3rem;
+        }
+
+        .progress-container {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            height: 3px;
+            cursor: pointer;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #ff3b6f, #ff8aa8);
+            border-radius: 20px;
+            box-shadow: 0 0 4px #ff3b6f;
+        }
+
+        .player-label {
+            font-size: 0.6rem;
+            text-align: left;
+            margin-top: 0.3rem;
+            color: #c9b69a;
+            opacity: 0.7;
+        }
+
+        .signature-block {
+            text-align: center;
+            margin: 1.2rem 0 0.8rem;
+        }
+
+        .sigil {
+            font-size: 0.65rem;
             letter-spacing: 3px;
-            color: #a67c6e;
-            border-top: 1px solid #f0e2df;
+            text-transform: uppercase;
+            color: #b2906e;
+            background: rgba(180, 124, 94, 0.12);
             display: inline-block;
-            padding-top: 1rem;
-            margin-top: 0.5rem;
-            font-weight: 300;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            border: 1px solid rgba(200, 160, 120, 0.2);
+            font-family: 'Inter', sans-serif;
         }
 
-        .heart {
-            color: #d95b5b;
-            font-size: 1.2rem;
+        .heartbeat {
             margin-top: 1rem;
-            display: inline-block;
-            animation: pulse 1.6s infinite;
+            text-align: center;
+            font-size: 1.4rem;
+            animation: floatHeart 2s ease-in-out infinite;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.7; }
-            50% { transform: scale(1.2); opacity: 1; }
-            100% { transform: scale(1); opacity: 0.7; }
+        @keyframes floatHeart {
+            0% { transform: translateY(0px); opacity: 0.5; }
+            50% { transform: translateY(-4px); opacity: 1; text-shadow: 0 0 8px #ff3b6f; }
+            100% { transform: translateY(0px); opacity: 0.5; }
         }
 
-        @media (max-width: 500px) {
-            .card { padding: 1.8rem 1.2rem; }
+        @media (max-width: 560px) {
+            .frame { padding: 1.6rem 1.2rem; }
             .message { font-size: 1.2rem; }
+            .symbol-glow { font-size: 1.6rem; }
+            .curved-border { padding: 0.3rem 1rem; gap: 0.4rem; }
+            .pista { font-size: 0.85rem; }
+            .player-image { width: 52px; height: 52px; }
+        }
+
+        .petal {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 1.6rem;
+            opacity: 0.12;
+            pointer-events: none;
+            transform: rotate(15deg);
+        }
+        .petal-left {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            font-size: 1.6rem;
+            opacity: 0.12;
+            pointer-events: none;
+            transform: rotate(-10deg);
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <div class="icon">✨</div>
-        <div class="message">
-            “No necesito que sepas quién soy. <br>
-            Solo quería decirte que, en algún lugar, alguien piensa <br>
-            que eres de las personas más bonitas de este mundo. <br>
-            Y no hablo de tu cara.”
+
+<div class="star" style="top: 12%; left: 8%;">✦</div>
+<div class="star" style="top: 70%; left: 85%;">✦</div>
+<div class="star" style="top: 40%; left: 92%;">✧</div>
+<div class="star" style="top: 85%; left: 15%;">✧</div>
+<div class="star" style="top: 25%; left: 95%;">✦</div>
+
+<div class="container">
+    <div class="frame">
+        <div class="line"></div>
+
+        <div class="symbol-container">
+            <div class="curved-border">
+                <div class="symbol-glow"><span class="heart-symbol">♡</span></div>
+                <div class="symbol-glow"><span class="star-symbol">✦</span></div>
+                <div class="symbol-glow"><span class="heart-symbol">♡</span></div>
+            </div>
         </div>
-        <div class="signature">para vos · anónimo</div>
-        <div class="heart">❤️</div>
+
+        <div class="message">
+            No necesito que sepas quién soy.<br><br>
+            Solo quiero que sepas que hay alguien que te mira y no tiene prisa.<br><br>
+            No quiero apurarte. No quiero que me respondas ni que adivines quién soy.<br><br>
+            Solo quiero que existas. Que sigas riéndote así. Que sigas siendo vos.<br><br>
+            Yo mientras tanto, voy a estar. Sin molestar. Sin apurar. Sin pedir más de lo que quieras dar.<br><br>
+            Porque no busco un rato. Busco algo que valga la espera.<br><br>
+            Y si hay algo que aprendí viéndote, es que hay personas por las que vale la pena esperar lo que sea.<br><br>
+            En algún lugar, alguien piensa que <span class="highlight-red">eres de las personas más bonitas</span> de este mundo.<br><br>
+            Y no hablo de tu cara.
+        </div>
+
+        <div class="pista">
+            “A veces las mejores conversaciones son las que no necesitan palabras.<br>
+            Y las miradas que se cruzan sin querer… esas tampoco.”
+        </div>
+
+        <div class="modern-player">
+            <img class="player-image" src="https://s.mxmcdn.net/images-storage/albums2/0/3/6/1/7/9/80971630_500_500.jpg" alt="Siento que merezco más">
+            <div class="player-controls-container">
+                <div class="player-controls">
+                    <button class="player-btn" id="playPauseBtn">▶</button>
+                </div>
+                <div class="progress-container" id="progressContainer">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <div class="time-info">
+                    <span id="currentTime">0:00</span>
+                    <span id="duration">0:00</span>
+                </div>
+                <div class="player-label">Siento que merezco más — Latin Mafia</div>
+            </div>
+        </div>
+
+        <div class="signature-block">
+            <div class="sigil">anónimo · solo por hoy</div>
+        </div>
+
+        <div class="heartbeat">
+            ✧ <span style="color:#ff3b6f; text-shadow: 0 0 4px #ff3b6f;">❤︎</span> ✧
+        </div>
     </div>
+</div>
+
+<audio id="song" src="https://files.catbox.moe/vj9bpf.mp3" preload="metadata"></audio>
+
+<script>
+    const audio = document.getElementById('song');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const progressBar = document.getElementById('progressBar');
+    const progressContainer = document.getElementById('progressContainer');
+    const currentTimeSpan = document.getElementById('currentTime');
+    const durationSpan = document.getElementById('duration');
+
+    function formatTime(seconds) {
+        if (isNaN(seconds)) return '0:00';
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    }
+
+    audio.addEventListener('loadedmetadata', () => {
+        durationSpan.textContent = formatTime(audio.duration);
+    });
+
+    playPauseBtn.addEventListener('click', () => {
+        if (audio.paused) {
+            audio.play();
+            playPauseBtn.textContent = '⏸';
+        } else {
+            audio.pause();
+            playPauseBtn.textContent = '▶';
+        }
+    });
+
+    audio.addEventListener('timeupdate', () => {
+        const percent = (audio.currentTime / audio.duration) * 100;
+        progressBar.style.width = `${percent}%`;
+        currentTimeSpan.textContent = formatTime(audio.currentTime);
+    });
+
+    progressContainer.addEventListener('click', (e) => {
+        const width = progressContainer.clientWidth;
+        const clickX = e.offsetX;
+        const duration = audio.duration;
+        audio.currentTime = (clickX / width) * duration;
+    });
+
+    audio.addEventListener('ended', () => {
+        playPauseBtn.textContent = '▶';
+        progressBar.style.width = '0%';
+        currentTimeSpan.textContent = '0:00';
+    });
+</script>
+
+<div class="petal">🌹</div>
+<div class="petal-left">🍂</div>
+
 </body>
 </html>
