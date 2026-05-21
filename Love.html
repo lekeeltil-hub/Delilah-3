@@ -249,6 +249,14 @@
             transform: scale(1.02);
             background: rgba(255, 59, 111, 0.1);
         }
+        .lyrics-content .active-line-gold {
+            color: #f5b042;
+            text-shadow: 0 0 8px #ffb347, 0 0 12px rgba(245, 176, 66, 0.5);
+            font-weight: 600;
+            transform: scale(1.02);
+            background: rgba(245, 176, 66, 0.15);
+            border-left: 3px solid #f5b042;
+        }
         .lyrics-content::-webkit-scrollbar { width: 4px; }
         .lyrics-content::-webkit-scrollbar-track { background: #2a2520; border-radius: 10px; }
         .lyrics-content::-webkit-scrollbar-thumb { background: #ff3b6f; border-radius: 10px; }
@@ -298,13 +306,13 @@
         <div class="symbol-container"><div class="curved-border"><div class="symbol-glow"><span class="heart-symbol">♡</span></div><div class="symbol-glow"><span class="star-symbol">✦</span></div><div class="symbol-glow"><span class="heart-symbol">♡</span></div></div></div>
         <div class="message">No necesito que sepas quién soy.<br><br>Solo quiero que sepas que hay alguien que te mira y no tiene prisa.<br><br>No quiero apurarte. No quiero que me respondas ni que adivines quién soy.<br><br>Solo quiero que existas. Que sigas riéndote así. Que sigas siendo vos.<br><br>Yo mientras tanto, voy a estar. Sin molestar. Sin apurar. Sin pedir más de lo que quieras dar.<br><br>Porque no busco un rato. Busco algo que valga la espera.<br><br>Y si hay algo que aprendí viéndote, es que hay personas por las que vale la pena esperar lo que sea.<br><br>En algún lugar, alguien piensa que <span class="highlight-red">eres de las personas más bonitas</span> de este mundo.<br><br>Y no hablo de tu cara.</div>
         <div class="pista">“A veces las mejores conversaciones son las que no necesitan palabras.<br>Y las miradas que se cruzan sin querer… esas tampoco.”</div>
-        <div class="modern-player"><img class="player-image" src="https://s.mxmcdn.net/images-storage/albums2/0/3/6/1/7/9/80971630_500_500.jpg" alt="Siento que merezco más"><div class="player-controls-container"><div class="player-controls"><button class="player-btn" id="playPauseBtn">▶</button></div><div class="progress-container" id="progressContainer"><div class="progress-bar" id="progressBar"></div></div><div class="time-info"><span id="currentTime">0:00</span><span id="duration">0:00</span></div><div class="player-label">Siento que merezco más — Latin Mafia</div></div></div>
+        <div class="modern-player"><img class="player-image" src="https://i.ibb.co/H1GfCzk/OIP-1.png" alt="Patadas de Ahogado"><div class="player-controls-container"><div class="player-controls"><button class="player-btn" id="playPauseBtn">▶</button></div><div class="progress-container" id="progressContainer"><div class="progress-bar" id="progressBar"></div></div><div class="time-info"><span id="currentTime">0:00</span><span id="duration">0:00</span></div><div class="player-label">Patadas de Ahogado — Latin Mafia</div></div></div>
         <div class="lyrics-box" id="lyricsBox"><div class="lyrics-header"><span>🎤 LETRA</span><button class="close-lyrics" id="closeLyricsBtn">✕</button></div><div class="lyrics-content" id="lyricsContent"></div></div>
         <div style="text-align: center;"><div class="pista-firma">✦ No busques mi nombre. Buscá la mirada que cruzaste sin querer y que no se fue del todo. ✦</div></div>
         <div class="heartbeat">✧ <span style="color:#ff3b6f; text-shadow: 0 0 4px #ff3b6f;">❤︎</span> ✧</div>
     </div>
 </div>
-<audio id="song" src="https://files.catbox.moe/vj9bpf.mp3" preload="metadata"></audio>
+<audio id="song" src="https://files.catbox.moe/lsn6td.mp3" preload="metadata"></audio>
 <script>
     const audio = document.getElementById('song');
     const playPauseBtn = document.getElementById('playPauseBtn');
@@ -317,48 +325,67 @@
     const lyricsContainer = document.getElementById('lyricsContent');
 
     const lyrics = [
-        { time: 0.0, text: "" },
-        { time: 11.83, text: "Escucha mi voz" },
-        { time: 14.67, text: "Y quédate cerca" },
-        { time: 18.07, text: "Cerca de aquí" },
-        { time: 20.57, text: "Pa' que huelas a mí" },
-        { time: 24.05, text: "Escucha mi voz" },
-        { time: 27.05, text: "Cada que te pierdas" },
-        { time: 30.46, text: "Te doy mi sudor" },
-        { time: 33.02, text: "Te dedico mis fechas" },
-        { time: 36.07, text: "-(ay qué tenemos aquí)" },
-        { time: 37.50, text: "Mente, cuerpo y alma" },
-        { time: 38.96, text: "Dale apúntale a mi pecho" },
-        { time: 40.07, text: "Siento que a patadas" },
-        { time: 41.77, text: "Igual y llego a mi techo" },
-        { time: 43.28, text: "Qué preguntas tan pendejas" },
-        { time: 44.60, text: "Son las que luego me he hecho" },
-        { time: 46.10, text: "Crees que si muera un par en el mundo" },
-        { time: 47.67, text: "Se pondría contento?" },
-        { time: 49.59, text: "Siento que" },
-        { time: 52.89, text: "Siento que escribí tantas cosas que no sentí nada más" },
-        { time: 57.06, text: "Siento que" },
-        { time: 60.25, text: "Siento que no beso mal" },
-        { time: 66.40, text: "Siento que merezco más" },
-        { time: 68.18, text: "♪" },
-        { time: 72.73, text: "Siento que no beso mal" },
-        { time: 76.59, text: "He practicado muchas horas porque un día me sentí muy mal" },
-        { time: 79.37, text: "♪" },
-        { time: 96.93, text: "Siento que no beso mal" },
-        { time: 102.98, text: "Siento que merezco más" },
-        { time: 104.64, text: "Bésame, siénteme, roba mi aliento" },
-        { time: 110.76, text: "Quiéreme con mi mal temperamento" },
-        { time: 115.53, text: "No dejes de alumbrarme" },
-        { time: 121.56, text: "Déjame desarmarme" },
-        { time: 128.06, text: "No dejes de mirarme" },
-        { time: 131.98, text: "♪" },
-        { time: 134.14, text: "Con ojos de curarme" }
+        { time: 0.0, text: "", type: "normal" },
+        { time: 5.17, text: "Tú hueles a vainilla, te quiero", type: "normal" },
+        { time: 9.33, text: "Dale, abrázame otro rato", type: "normal" },
+        { time: 14.60, text: "Déjame, te soy sincero", type: "normal" },
+        { time: 19.90, text: "Tiene tiempo que yo trato", type: "normal" },
+        { time: 25.12, text: "Llevaba tiempo buscando a quién cantarle", type: "normal" },
+        { time: 30.88, text: "Sobre cuando me siento vulnerable", type: "normal" },
+        { time: 35.66, text: "Dale, abrázame otro rato", type: "normal" },
+        { time: 40.74, text: "Apapáchame la vida entera", type: "normal" },
+        { time: 42.37, text: "Quiero saberte a lo que quieres", type: "love" },
+        { time: 45.14, text: "Llorar por lo que te hace llorar", type: "love" },
+        { time: 47.43, text: "Ser música de la que prefieres", type: "love" },
+        { time: 50.36, text: "Y que nunca me quieras pausar", type: "love" },
+        { time: 52.81, text: "Quiero saberte a lo que quieres", type: "love" },
+        { time: 55.66, text: "Llorar por lo que te hace llorar", type: "love" },
+        { time: 58.12, text: "Ser música de la que prefieres", type: "love" },
+        { time: 60.81, text: "Y que nunca me quieras pausar", type: "love" },
+        { time: 63.93, text: "Aventando patadas de ahogado (de ahogado)", type: "normal" },
+        { time: 68.80, text: "Sin saber si la armamos, seguimos nadando (nadando)", type: "normal" },
+        { time: 74.15, text: "Por ti sigo tratando, cavando", type: "normal" },
+        { time: 78.53, text: "Regando las flores que de viejos nos veo fumando", type: "normal" },
+        { time: 83.61, text: "Fumando, ah-ah-ah-ah-ah, fumando", type: "normal" },
+        { time: 96.21, text: "No me da miedo admitir que", type: "normal" },
+        { time: 99.08, text: "Desde la primera vez que te vi", type: "normal" },
+        { time: 101.44, text: "Yo ya me lo veía venir, estar all-in por ti", type: "normal" },
+        { time: 106.41, text: "Porque yo ya sabía a lo que iba", type: "normal" },
+        { time: 109.34, text: "Querer comprarnos un terreno y construirnos la vida", type: "normal" },
+        { time: 114.81, text: "Porque contigo lo sabía", type: "normal" },
+        { time: 116.59, text: "Que tú y yo vamos por la milla (ey)", type: "normal" },
+        { time: 119.13, text: "Y que siempre voy a querer saber si va bien todo en tu día (ey)", type: "normal" },
+        { time: 124.57, text: "¿Qué tal va tu día? (¿qué tal va tu día?)", type: "normal" },
+        { time: 127.39, text: "Es lo que me importa, mi vida", type: "normal" },
+        { time: 129.88, text: "Si vamos tarde por tu culpa decir que es la mía", type: "normal" },
+        { time: 136.25, text: "Que fue culpa mía", type: "normal" },
+        { time: 137.73, text: "Aventando patadas de ahogado (de ahogado)", type: "normal" },
+        { time: 142.96, text: "Sin saber si la armamos, seguimos nadando (nadando)", type: "normal" },
+        { time: 148.03, text: "Por ti sigo tratando, cavando", type: "normal" },
+        { time: 152.57, text: "Regando las flores que de viejos nos veo fumando", type: "normal" },
+        { time: 158.82, text: "Aventando patadas de ahogado", type: "normal" },
+        { time: 163.73, text: "Sin saber si la armamos, seguimos nadando", type: "normal" },
+        { time: 169.15, text: "Por ti sigo tratando, cavando", type: "normal" },
+        { time: 174.38, text: "Regando las flores que de viejos nos veo fumando", type: "normal" },
+        { time: 178.09, text: "Nos veo fumando", type: "normal" },
+        { time: 180.08, text: "Llevaba tiempo buscando a quién cantarle", type: "normal" },
+        { time: 185.21, text: "Sobre cuando me siento vulnerable", type: "normal" },
+        { time: 190.44, text: "Por ti sigo tratando, cavando", type: "normal" },
+        { time: 195.31, text: "Apapáchame la vida entera", type: "normal" },
+        { time: 196.93, text: "Regando las flores que de viejos nos veo fumando", type: "normal" },
+        { time: 201.57, text: "Quiero saberte a lo que quieres", type: "love" },
+        { time: 204.58, text: "Llorar por lo que te hace llorar", type: "love" },
+        { time: 206.93, text: "Ser música de la que prefieres", type: "love" },
+        { time: 209.82, text: "Y que nunca me quieras pausar", type: "love" }
     ];
 
     lyrics.forEach((line, index) => {
         const span = document.createElement('span');
         span.textContent = line.text;
         span.id = `lyric-${index}`;
+        if (line.type === 'love') {
+            span.classList.add('love-line');
+        }
         lyricsContainer.appendChild(span);
     });
 
@@ -371,13 +398,17 @@
             }
         }
         document.querySelectorAll('#lyricsContent span').forEach(span => {
-            span.classList.remove('active-line');
+            span.classList.remove('active-line', 'active-line-gold');
         });
+        
         if (activeIndex !== -1 && lyrics[activeIndex].text !== "") {
             const activeSpan = document.getElementById(`lyric-${activeIndex}`);
             if (activeSpan) {
-                activeSpan.classList.add('active-line');
-                // 🔥 SCROLL AUTOMÁTICO SOLO SI LA LETRA ESTÁ VISIBLE EN PANTALLA
+                if (lyrics[activeIndex].type === 'love') {
+                    activeSpan.classList.add('active-line-gold');
+                } else {
+                    activeSpan.classList.add('active-line');
+                }
                 const lyricsBoxRect = lyricsBox.getBoundingClientRect();
                 const isLyricsVisible = lyricsBoxRect.top < window.innerHeight && lyricsBoxRect.bottom > 0;
                 if (isLyricsVisible) {
